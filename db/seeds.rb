@@ -26,7 +26,7 @@ Category.create([
   {parent_category_id: 1, title: 'Tech'},
   {parent_category_id: 1, title: 'Economy'},
   {parent_category_id: 1, title: 'Novels'}
-  ])
+])
   
 Category.create([
   {parent_category_id: 2, title: 'Education'},
@@ -47,3 +47,16 @@ Category.create([
   {parent_category_id: 4, title: 'Fashion'},
   {parent_category_id: 4, title: 'Home & Kitchen'}
 ])
+
+g_array = Group.all.pluck(:id)
+c_array = Category.all.pluck(:id)
+30.times do
+  Bookmark.create([
+    {
+      group_id: g_array.sample,
+      category_id: c_array.sample,
+      url: Faker::Internet.url,
+      title: Faker::Lorem.sentence(word_count: rand(1..5))
+    }
+  ])
+end

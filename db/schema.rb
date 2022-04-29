@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_29_170529) do
+ActiveRecord::Schema.define(version: 2022_04_29_191542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_04_29_170529) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.index ["category_id"], name: "index_bookmarks_on_category_id"
     t.index ["group_id"], name: "index_bookmarks_on_group_id"
   end
