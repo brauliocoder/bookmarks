@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Category.delete_all()
+Group.delete_all()
+
+Group.create([
+  {name: 'Video'},
+  {name: 'Article'},
+  {name: 'Paper'}
+])
+
 Category.create([
   {title: 'Books'},
   {title: 'Streaming'},
