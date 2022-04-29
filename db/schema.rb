@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_04_29_170529) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "parent_category_id"
-    t.boolean "is_public"
+    t.boolean "is_public", default: true
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Category.delete_all()
+Category.create([
+  {title: 'Books'},
+  {title: 'Streaming'},
+  {title: 'Jobs Portals'},
+  {title: 'Shops'}
+])
+
+Category.create([
+  {parent_category_id: 1, title: 'Tech'},
+  {parent_category_id: 1, title: 'Economy'},
+  {parent_category_id: 1, title: 'Novels'}
+  ])
+  
+Category.create([
+  {parent_category_id: 2, title: 'Education'},
+  {parent_category_id: 2, title: 'Shows'},
+  {parent_category_id: 2, title: 'Movies'},
+  {parent_category_id: 2, title: 'Gameplays'}
+])
+
+Category.create([
+  {parent_category_id: 3, title: 'Coding'},
+  {parent_category_id: 3, title: 'Industry'}
+])
+
+Category.create([
+  {parent_category_id: 4, title: 'Books'},
+  {parent_category_id: 4, title: 'Motorcycle'},
+  {parent_category_id: 4, title: 'Smartphones'},
+  {parent_category_id: 4, title: 'Fashion'},
+  {parent_category_id: 4, title: 'Home & Kitchen'}
+])
