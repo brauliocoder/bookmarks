@@ -1,27 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Bookmarks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Category</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul>
+  <% Category.root_parents.each do |category| %>
+    <%= render 'bookmarks/components/category/category_card', category: category %>
+  <% end %>
+</ul>
 
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.group_id %></td>
-        <td><%= bookmark.category_id %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= javascript_pack_tag "categoryAction" %>

@@ -1,0 +1,40 @@
+<li>  
+  <div class="d-flex align-items-center">
+    <span class="category-title user-select-none" data-id="<%= category.id %>">
+      <svg style="height: 25px;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+      </svg>
+      <%= category.title %>
+    </span>
+    <%# buttons %>
+    <div class="category-action ms-2 d-flex flex-row gap-1 d-none">
+      <%= render 'bookmarks/components/category/actions' %>
+    </div>
+  </div>
+  
+  <div id="collapsable-<%= category.id %>" class="d-none">
+    <%= render 'bookmarks/components/category/bookmarks', category: category %>
+    
+    <% if category.children.count > 0 %>
+      <ul>
+        <% category.children.each do |c| %>
+          <%= render 'bookmarks/components/category/category_card', category: c %>
+        <% end %>
+      </ul>
+    <% else %>
+      <% if category.bookmarks.count <= 0 %>
+        <ul>
+          <li>
+            <span class="badge bg-warning text-dark px-2 pe-3 user-select-none">
+              <svg style="height: 18px;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Category is empty
+            </span>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</li>
+  

@@ -1,0 +1,14 @@
+<% if category.bookmarks.count > 0 %>
+  <ul>
+    <% category.bookmarks.each do |bookmark| %>
+      <li>
+        <span class="badge bg-secondary px-2 pe-3 mb-1 user-select-none">
+          <svg style="height: 18px;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+          </svg>
+          <%= bookmark.title %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
