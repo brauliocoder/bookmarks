@@ -1,7 +1,7 @@
 <div class="d-flex d-row">
   <div class="col">
     <h1>Bookmarks</h1>
-    <div id="navigation">
+    <div id="navigation" class="overflow-auto">
       <%= render 'bookmarks/components/category/navigation', base_categories: Category.root_parents %>
     </div>
   </div>

@@ -13,6 +13,9 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    if params[:parent_id]
+      @category.parent_category_id = params[:parent_id]
+    end
   end
 
   # GET /categories/1/edit
@@ -27,9 +30,11 @@ class CategoriesController < ApplicationController
       if @category.save
         format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
         format.json { render :show, status: :created, location: @category }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

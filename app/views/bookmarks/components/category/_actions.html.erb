@@ -1,7 +1,8 @@
-<%= button_to "Add Subcategory", 
-  new_category_path,
+<%= link_to "Add Subcategory", 
+  new_category_path(:parent_id => category.id),
   method: :get,
-  class: "btn m-0 btn-secondary btn-sm" %>
+  class: "btn m-0 btn-secondary btn-sm",
+  remote: true %>
 
 <button type="button" class="btn m-0 btn-secondary btn-sm">Add Bookmark</button>
 
