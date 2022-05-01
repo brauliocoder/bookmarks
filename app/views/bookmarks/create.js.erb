@@ -1,0 +1,2 @@
+document.querySelector("#collapsable-<%= @bookmark.category.id %>").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'bookmarks/components/bookmark/bookmark_card', bookmark: @bookmark ) %>");
+document.querySelector("#details").innerHTML = "";

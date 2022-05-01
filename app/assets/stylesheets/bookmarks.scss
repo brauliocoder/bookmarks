@@ -1,3 +1,23 @@
 // Place all the styles related to the bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#base-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#left-container {
+  width: 50vw;
+}
+
+#left-container, #right-container {
+  flex-direction: column;
+}
+
+#right-container {
+  padding: 0rem 1rem;
+  padding-bottom: 1rem;
+  position: fixed;
+  left: 55vw;
+}

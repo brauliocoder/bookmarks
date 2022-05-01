@@ -1,0 +1,3 @@
+document.querySelector("#details").innerHTML = "";
+var bookmark = document.querySelector("#bookmark-<%= @bookmark.id %>");
+bookmark.querySelector(".bookmark-title").innerHTML = "<%= @bookmark.title %>";

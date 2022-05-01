@@ -13,6 +13,9 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new
   def new
     @bookmark = Bookmark.new
+    if params[:category_id]
+      @bookmark.category_id = params[:category_id]
+    end
   end
 
   # GET /bookmarks/1/edit
@@ -27,9 +30,11 @@ class BookmarksController < ApplicationController
       if @bookmark.save
         format.html { redirect_to bookmark_url(@bookmark), notice: "Bookmark was successfully created." }
         format.json { render :show, status: :created, location: @bookmark }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @bookmark.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -40,9 +45,11 @@ class BookmarksController < ApplicationController
       if @bookmark.update(bookmark_params)
         format.html { redirect_to bookmark_url(@bookmark), notice: "Bookmark was successfully updated." }
         format.json { render :show, status: :ok, location: @bookmark }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @bookmark.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -54,6 +61,7 @@ class BookmarksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to bookmarks_url, notice: "Bookmark was successfully destroyed." }
       format.json { head :no_content }
+      format.js
     end
   end
 
@@ -65,6 +73,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bookmark_params
-      params.require(:bookmark).permit(:group_id, :category_id, :url)
+      params.require(:bookmark).permit(:group_id, :category_id, :url, :title)
     end
 end

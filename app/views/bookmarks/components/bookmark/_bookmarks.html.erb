@@ -1,0 +1,5 @@
+<% if category.bookmarks.count > 0 %>
+  <% category.bookmarks.each do |b| %>
+    <%= render 'bookmarks/components/bookmark/bookmark_card', bookmark: b %>
+  <% end %>
+<% end %>

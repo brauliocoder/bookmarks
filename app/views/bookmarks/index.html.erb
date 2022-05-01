@@ -1,12 +1,12 @@
-<div class="d-flex d-row">
-  <div class="col">
+<div id="base-container">
+  <div id="left-container">
     <h1>Bookmarks</h1>
-    <div id="navigation" class="overflow-auto">
+    <div id="navigation" class="overflow-auto pt-2">
       <%= render 'bookmarks/components/category/navigation', base_categories: Category.root_parents %>
     </div>
   </div>
 
-  <div class="col">
+  <div id="right-container">
     <h1>Actions</h1>
     <div id="details"></div>
   </div>

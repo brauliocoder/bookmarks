@@ -1,0 +1,17 @@
+<div class="mb-2">
+  <h4 class="m-0 p-0">Bookmark</h4>
+  <a href=<%= bookmark.url %> target="_blank">
+    <span class="badge bg-success"><h5 class="m-0">Click to "<%= bookmark.title %>"</h5></span> <br>
+    <small><b></b> <%= bookmark.url %></small>
+  </a>
+
+  <p class="mt-2">
+    <strong>Category:</strong>
+    <%= bookmark.category.title %> |
+    <strong>Group:</strong>
+    <%= bookmark.group.name %>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_bookmark_path(bookmark), remote: true %> |
+<%= link_to "Delete", bookmark, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>

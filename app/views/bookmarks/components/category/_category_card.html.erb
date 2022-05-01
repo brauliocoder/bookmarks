@@ -16,7 +16,7 @@
   
   <ul id="collapsable-<%= category.id %>" class="my-1 d-none">
     <%= render 'bookmarks/components/category/if_category_empty', category: category %>
-    <%= render 'bookmarks/components/category/bookmarks', category: category %>
+    <%= render 'bookmarks/components/bookmark/bookmarks', category: category %>
     <%= render 'bookmarks/components/category/category_inception', category: category %>
   </ul>
 </li>
