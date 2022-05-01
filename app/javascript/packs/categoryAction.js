@@ -1,4 +1,4 @@
-let category_action_buttons = document.querySelectorAll(".category-title");
+let category_action_buttons = document.querySelectorAll(".category-header");
 
 // TODO improve interaction with actions
 category_action_buttons.forEach(category_directory => {

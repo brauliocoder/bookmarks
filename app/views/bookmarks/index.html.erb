@@ -1,9 +1,15 @@
-<h1>Bookmarks</h1>
+<div class="d-flex d-row">
+  <div class="col">
+    <h1>Bookmarks</h1>
+    <div id="navigation">
+      <%= render 'bookmarks/components/category/navigation', base_categories: Category.root_parents %>
+    </div>
+  </div>
 
-<ul>
-  <% Category.root_parents.each do |category| %>
-    <%= render 'bookmarks/components/category/category_card', category: category %>
-  <% end %>
-</ul>
+  <div class="col">
+    <h1>Actions</h1>
+    <div id="details"></div>
+  </div>
+</div>
 
 <%= javascript_pack_tag "categoryAction" %>

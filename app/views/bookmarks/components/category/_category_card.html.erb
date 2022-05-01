@@ -1,18 +1,20 @@
-<li>  
+<li id="category-<%= category.id %>">  
   <div class="d-flex align-items-center">
-    <span class="category-title user-select-none" data-id="<%= category.id %>">
+    <span class="category-header user-select-none" data-id="<%= category.id %>">
       <svg style="height: 25px;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
         <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
       </svg>
-      <%= category.title %>
+      <span class="category-title">
+        <%= category.title %>
+      </span>
     </span>
     <%# buttons %>
     <div class="category-action ms-2 d-flex flex-row gap-1 d-none">
-      <%= render 'bookmarks/components/category/actions' %>
+      <%= render 'bookmarks/components/category/actions', category: category %>
     </div>
   </div>
   
-  <div id="collapsable-<%= category.id %>" class="d-none">
+  <div id="collapsable-<%= category.id %>" class="my-1 d-none">
     <%= render 'bookmarks/components/category/bookmarks', category: category %>
     
     <% if category.children.count > 0 %>

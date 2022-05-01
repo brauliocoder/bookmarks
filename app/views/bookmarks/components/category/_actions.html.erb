@@ -1,12 +1,28 @@
-<button type="button" class="btn m-0 btn-success btn-sm">Add Bookmark</button>
-<button type="button" class="btn m-0 btn-success btn-sm">Add Subcategory</button>
+<%= button_to "Add Subcategory", 
+  new_category_path,
+  method: :get,
+  class: "btn m-0 btn-secondary btn-sm" %>
+
+<button type="button" class="btn m-0 btn-secondary btn-sm">Add Bookmark</button>
 
 <div class="dropdown">
   <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Actions
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item py-0" href="#">Edit</a></li>
-    <li><a class="dropdown-item py-0" href="#">Remove</a></li>
+    <li>
+      <%= link_to "Edit",
+        edit_category_path(category),
+        remote: true,
+        class: "dropdown-item py-0" %>
+    </li>
+    <li>
+      <%= link_to 'Remove',
+        category,
+        class: "dropdown-item py-0",
+        method: :delete,
+        remote: true,
+        data: { confirm: 'Are you sure?' } %>
+    </li>
   </ul>
 </div>
