@@ -1,0 +1,5 @@
+<% if category.children.count > 0 %>
+  <% category.children.each do |go_dicaprio| %>
+    <%= render 'bookmarks/components/category/category_card', category: go_dicaprio %>
+  <% end %>
+<% end %>

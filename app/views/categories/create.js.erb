@@ -1,3 +1,2 @@
-var d = document.querySelector("#collapsable-<%= @category.parent.id %>");
-console.log(d);
-// d.insertAdjacentElement("beforeend", "shit");
+document.querySelector("#collapsable-<%= @category.parent.id %>").insertAdjacentHTML("beforeend", "<%= escape_javascript( render 'bookmarks/components/category/category_card', category: @category ) %>");
+document.querySelector("#details").innerHTML = "";
