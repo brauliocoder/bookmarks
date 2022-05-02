@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
   validates :name, presence: true
 
-  has_many :bookmarks, dependent: nil
+  has_many :bookmarks, dependent: :nullify
 end

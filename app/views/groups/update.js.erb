@@ -1,0 +1,6 @@
+var edit_type_form = document.querySelector("#edit-group")
+edit_type_form.remove()
+
+var o = document.querySelector("#bookmark_group_id");
+o.querySelector('option[value="<%= @group.id %>"]').innerHTML = "<%= @group.name %>"
+

@@ -2,8 +2,8 @@ document.addEventListener("ajax:success",function(){
   let bookmarks_form = document.querySelector("#bookmark-form");
   if (bookmarks_form) {
     let dropdown_list = bookmarks_form.querySelector("#group-dropdown-list");
-    let edit_option = dropdown_list.querySelector("#edit-group");
-    let remove_option = dropdown_list.querySelector("#remove-group");
+    let edit_option = dropdown_list.querySelector("#edit-group-select");
+    let remove_option = dropdown_list.querySelector("#remove-group-select");
     
     let dropdown_button = bookmarks_form.querySelector("#group-dropdown-button");
     let group_select = bookmarks_form.querySelector("#bookmark_group_id");

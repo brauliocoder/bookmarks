@@ -1,0 +1,6 @@
+var edit_type_form = document.querySelector("#edit-group")
+if (edit_type_form) {
+  edit_type_form.remove()
+}
+
+document.querySelector("#details").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'groups/edit', group: @group ) %>");
