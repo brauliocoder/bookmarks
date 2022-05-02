@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :group_id %>
+    <%= form.label :group_id, "Type" %>
     <%= form.collection_select :group_id, Group.all, :id, :name, { include_blank: true } %>
 
     <%# TODO link to add new group %>
-    <%= link_to "Add New", new_group_path %>
+    <%= render 'bookmarks/components/form/form_dropdown' %>
+    
   </div>
 
   <div class="field">
@@ -26,12 +27,12 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, autocomplete: 'off' %>
   </div>
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, autocomplete: 'off' %>
   </div>
 
   <div class="actions">

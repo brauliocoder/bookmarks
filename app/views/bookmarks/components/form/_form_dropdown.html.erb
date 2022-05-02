@@ -1,0 +1,19 @@
+<!-- Split dropend button -->
+<div class="btn-group dropend">
+  <%= link_to "Add New Type", new_group_path, remote: true, class: "btn btn-sm btn-secondary" %>
+
+  <button id="group-dropdown-button" type="button" class="disabled btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropright</span>
+  </button>
+  
+  <ul id="group-dropdown-list" class="dropdown-menu dropdown-menu-dark">
+    <li>
+      <a id="edit-group" class="dropdown-item my-0 py-0" data-remote="true" href="#">Edit Type</a>
+    </li>
+    <li>
+      <a id="remove-group" class="dropdown-item my-0 py-0" data-confirm="Are you sure?" data-remote="true" rel="nofollow" data-method="delete" href="/categories/2">Delete Type</a>
+    </li>
+  </ul>
+</div>
+
+<%# TODO programar JS para editar y eliminar grupos desde el front %>

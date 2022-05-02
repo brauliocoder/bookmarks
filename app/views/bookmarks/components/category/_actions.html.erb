@@ -16,13 +16,13 @@
   </button>
   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
     <li>
-      <%= link_to "Edit #{category.title}",
+      <%= link_to "Change Name",
         edit_category_path(category),
         remote: true,
         class: "dropdown-item py-0" %>
     </li>
     <li>
-      <%= link_to "Remove category",
+      <%= link_to "Remove Category",
         category,
         class: "dropdown-item py-0",
         method: :delete,

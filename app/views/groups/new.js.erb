@@ -1,0 +1,6 @@
+var new_type_form = document.querySelector("#new-group")
+if (new_type_form) {
+  new_type_form.remove()
+}
+
+document.querySelector("#details").insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'groups/new', group: @group ) %>");

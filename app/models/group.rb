@@ -1,3 +1,5 @@
 class Group < ApplicationRecord
-  has_many :bookmarks
+  validates :name, presence: true
+
+  has_many :bookmarks, dependent: :destroy
 end
