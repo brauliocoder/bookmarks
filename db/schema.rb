@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_04_29_191542) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.bigint "category_id", null: false
     t.string "url"
     t.datetime "created_at", precision: 6, null: false

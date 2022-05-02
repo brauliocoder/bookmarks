@@ -8,8 +8,13 @@
   <p class="mt-2">
     <strong>Category:</strong>
     <%= bookmark.category.title %> |
-    <strong>Group:</strong>
-    <%= bookmark.group.name %>
+    <strong>Type:</strong>
+    <% if bookmark.group %>
+      <%= bookmark.group.name %>
+    <% else %>
+      <span class="badge bg-danger">Non classified</span>
+    <% end %>
+
   </p>
 </div>
 
