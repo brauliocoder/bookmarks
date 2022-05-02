@@ -1,0 +1,22 @@
+<div class="dropdown">
+  <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Actions
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+    <li>
+      <%= link_to "Edit",
+        edit_category_path(category),
+        remote: true,
+        class: "dropdown-item py-0" %>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li>
+      <%= link_to "Remove Category",
+        category,
+        class: "dropdown-item py-0",
+        method: :delete,
+        remote: true,
+        data: { confirm: 'Are you sure?' } %>
+    </li>
+  </ul>
+</div>

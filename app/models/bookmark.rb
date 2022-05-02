@@ -1,4 +1,6 @@
 class Bookmark < ApplicationRecord
-  belongs_to :group
+  validates_presence_of :url, :title
+
+  belongs_to :group, optional: true
   belongs_to :category
 end

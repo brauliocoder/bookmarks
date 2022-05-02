@@ -1,2 +1,10 @@
 document.querySelector("#bookmark-<%= @bookmark.id %>").remove();
 document.querySelector("#details").innerHTML = "";
+
+var collapsable = document.querySelector("#collapsable-<%= @bookmark.category.id %>");
+<% if @bookmark.category.is_empty? %>
+  var warning = collapsable.querySelector(".empty-category-warning");
+  if (!warning) {
+    collapsable.insertAdjacentHTML("afterbegin", "<%= escape_javascript( render 'bookmarks/components/category/warning_empty' ) %>");
+  }
+<% end %>

@@ -10,24 +10,4 @@
   class: "btn m-0 btn-secondary btn-sm",
   remote: true %>
 
-<div class="dropdown">
-  <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Actions
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-    <li>
-      <%= link_to "Change Name",
-        edit_category_path(category),
-        remote: true,
-        class: "dropdown-item py-0" %>
-    </li>
-    <li>
-      <%= link_to "Remove Category",
-        category,
-        class: "dropdown-item py-0",
-        method: :delete,
-        remote: true,
-        data: { confirm: 'Are you sure?' } %>
-    </li>
-  </ul>
-</div>
+<%= render 'bookmarks/components/category/category_dropdown', category: category %>

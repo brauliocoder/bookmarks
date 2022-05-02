@@ -5,7 +5,11 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
     <div>
-      <button class="btn btn-outline-dark" type="button">New Folder</button>
+      <%= link_to "New Folder", 
+        new_category_path(),
+        method: :get,
+        class: "btn btn-outline-dark",
+        remote: true %>
       <button class="btn btn-outline-dark" type="button">Add Bookmark</button>
       <button class="btn btn-outline-info ms-4" type="button">Stats</button>
     </div>
