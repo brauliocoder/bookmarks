@@ -1,19 +1,11 @@
 <nav class="navbar navbar-light bg-light sticky-top shadow-sm">
-  <div class="container">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    <div>
-      <%= link_to "New Folder", 
-        new_category_path(),
-        method: :get,
-        class: "btn btn-outline-dark",
-        remote: true %>
-
-      <button class="btn btn-outline-dark" type="button">Add Bookmark</button>
-      
-      <button type="button" class="btn btn-outline-info ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Stats</button>
-    </div>
+  <div class="container justify-content-start">
+    <%= link_to "New Folder", 
+      new_category_path(),
+      method: :get,
+      class: "btn btn-outline-dark",
+      remote: true %>
+    
+    <button type="button" class="btn btn-outline-info ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Stats</button>
   </div>
 </nav>
