@@ -1,6 +1,6 @@
+document.querySelector("#details").innerHTML = "";
 <% if @category.parent %>
   document.querySelector("#collapsable-<%= @category.parent.id %>").insertAdjacentHTML("beforeend", "<%= escape_javascript( render 'bookmarks/components/category/category_card', category: @category ) %>");
-  document.querySelector("#details").innerHTML = "";
   <% if !@category.parent.is_empty? %>
     var collapsable = document.querySelector("#collapsable-<%= @category.parent.id %>");
     var warning = collapsable.querySelector(".empty-category-warning");
@@ -10,6 +10,4 @@
   <% end %>
 <% else %>
   document.querySelector("#root-categories").insertAdjacentHTML("beforeend", "<%= escape_javascript( render 'bookmarks/components/category/category_card', category: @category ) %>");
-  document.querySelector("#details").innerHTML = "";
 <% end %>
-

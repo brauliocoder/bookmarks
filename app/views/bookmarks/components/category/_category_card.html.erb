@@ -1,4 +1,4 @@
-<li id="category-<%= category.id %>">  
+<li id="category-<%= category.id %>" data-ispublic=<%= category.is_public %> class="category-folder <%= 'd-none' if !category.is_public %>" >
   <div class="d-flex align-items-center">
     <span onclick="categoryAction(this)" class="category-header user-select-none" data-id="<%= category.id %>">
       <svg style="height: 25px;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

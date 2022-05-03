@@ -1,3 +1,10 @@
 document.querySelector("#details").innerHTML = "";
-var category_dropdown = document.querySelector("#category-<%= @category.id %>");
-category_dropdown.querySelector(".category-title").innerHTML = "<%= @category.title %>";
+var category_header = document.querySelector("#category-<%= @category.id %>");
+category_header.querySelector(".category-title").innerHTML = "<%= @category.title %>";
+
+<% if !@category.is_public %>
+  category_header.dataset.ispublic = false;
+  if (!document.querySelector("#public-private-switch").checked) {
+    category_header.classList.add("d-none");
+  }
+<% end %>

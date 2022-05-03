@@ -1,6 +1,10 @@
 <div id="base-container">
   <div id="left-container">
     <h1>Bookmarks</h1>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="public-private-switch">
+      <label class="form-check-label" for="public-private-switch">show private categories</label>
+    </div>
     <div id="navigation" class="overflow-auto pt-2">
       <%= render 'bookmarks/components/category/navigation', base_categories: Category.root_parents %>
     </div>
@@ -13,3 +17,4 @@
 </div>
 
 <%= javascript_pack_tag 'typeActions' %>
+<%= javascript_pack_tag 'hidePrivate' %>
