@@ -1,3 +1,5 @@
-document.querySelector("#details").innerHTML = "<%= escape_javascript( render 'bookmarks/show', bookmark: @bookmark ) %>";
-var bookmark = document.querySelector("#bookmark-<%= @bookmark.id %>");
-bookmark.querySelector(".bookmark-title").innerHTML = "<%= @bookmark.title %>";
+<% if not @bookmark.errors.any? %>
+  document.querySelector("#details").innerHTML = "<%= escape_javascript( render 'bookmarks/show', bookmark: @bookmark ) %>";
+  var bookmark = document.querySelector("#bookmark-<%= @bookmark.id %>");
+  bookmark.querySelector(".bookmark-title").innerHTML = "<%= @bookmark.title %>";
+<% end %>

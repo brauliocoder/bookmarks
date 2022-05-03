@@ -19,7 +19,7 @@ Category.create([
   {title: 'Books'},
   {title: 'Streaming'},
   {title: 'Jobs Portals'},
-  {title: 'Shops'}
+  {title: 'Shops', is_public: false}
 ])
 
 Category.create([
@@ -36,7 +36,7 @@ Category.create([
 ])
 
 Category.create([
-  {parent_category_id: 3, title: 'Coding'},
+  {parent_category_id: 3, title: 'Coding', is_public: false },
   {parent_category_id: 3, title: 'Industry'}
 ])
 
