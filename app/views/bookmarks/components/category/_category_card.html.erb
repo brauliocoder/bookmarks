@@ -6,6 +6,9 @@
       </svg>
       <span class="category-title">
         <%= category.title %>
+        <% if !category.is_public %>
+          <small><span class="badge rounded-pill bg-dark">private</span></small>
+        <% end %>
       </span>
     </span>
 

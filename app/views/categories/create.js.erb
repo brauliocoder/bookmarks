@@ -11,3 +11,10 @@ document.querySelector("#details").innerHTML = "";
 <% else %>
   document.querySelector("#root-categories").insertAdjacentHTML("beforeend", "<%= escape_javascript( render 'bookmarks/components/category/category_card', category: @category ) %>");
 <% end %>
+
+<% if !@category.is_public %>
+  if (document.querySelector("#public-private-switch").checked) {
+    var category_header = document.querySelector("#category-<%= @category.id %>");
+    category_header.classList.remove("d-none");
+  }
+<% end %>

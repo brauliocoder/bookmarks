@@ -1,9 +1,13 @@
 document.querySelector("#details").innerHTML = "";
 var category_header = document.querySelector("#category-<%= @category.id %>");
-category_header.querySelector(".category-title").innerHTML = "<%= @category.title %>";
 
-<% if !@category.is_public %>
+<% if @category.is_public %>
+  category_header.dataset.ispublic = true;
+  category_header.querySelector(".category-title").innerHTML = '<%= @category.title %>';
+<% else %>
   category_header.dataset.ispublic = false;
+  category_header.querySelector(".category-title").innerHTML = '<%= @category.title %> <small><span class="badge rounded-pill bg-dark">private</span></small>';
+  
   if (!document.querySelector("#public-private-switch").checked) {
     category_header.classList.add("d-none");
   }
